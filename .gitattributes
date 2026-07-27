@@ -1,0 +1,6 @@
+# Copyright 2026 上海如静知华信息科技有限公司
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+
