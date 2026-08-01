@@ -169,3 +169,9 @@ zhuatech-wms/
 Copyright © 2026 上海如静知华信息科技有限公司（Shanghai Rujing Zhihua Information Technology Co., Ltd.）
 
 **搜索关键词：** 知华科技 WMS、ZhuaTech WMS、Java WMS、Spring Boot 仓储管理系统、Vue WMS、H5 仓库作业、PDA 拣货系统、MySQL WMS、库存管理源码、入库管理系统、出库波次、仓库扫码系统、WMS 私有化部署、WMS 二次开发、上海 WMS 定制开发、仓库数字化。
+
+## 拣选面动态补货
+
+新增 `POST /api/wms/replenishment-plan`。输入拣选面现存量、安全库存、预计需求、储备库存和补货提前期，即可得到需求量、建议补货量、缺口标记、紧急程度和目标完成分钟数。紧急任务会明确要求锁定作业人员，库存不足则自动给出通知库存控制员的动作。
+
+这项能力同时服务后台计划员与仓库作业端，集成测试覆盖了 90 分钟提前期下的加急补货场景。

@@ -39,6 +39,16 @@ class WmsApiIntegrationTests {
         mvc.perform(get("/api/wms/dashboard")).andExpect(status().isForbidden());
     }
 
+    @Test void supervisorCanGenerateReplenishmentPlan() throws Exception {
+        String token = login("supervisor", "Demo@2026", "SUPERVISOR");
+        mvc.perform(post("/api/wms/replenishment-plan").header("Authorization", "Bearer " + token)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"sku\":\"FD-10021\",\"pickFaceQty\":30,\"safetyStock\":20,\"expectedDemand\":80,\"reserveQty\":100,\"leadMinutes\":90}"))
+            .andExpect(status().isOk()).andExpect(jsonPath("$.data.requiredQty").value(70))
+            .andExpect(jsonPath("$.data.replenishQty").value(70))
+            .andExpect(jsonPath("$.data.urgency").value("CRITICAL"));
+    }
+
     private String login(String username, String password, String role) throws Exception {
         String body = mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}"))
