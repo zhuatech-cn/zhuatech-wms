@@ -49,6 +49,17 @@ class WmsApiIntegrationTests {
             .andExpect(jsonPath("$.data.urgency").value("CRITICAL"));
     }
 
+    @Test void supervisorCanCheckWaveReleaseReadiness() throws Exception {
+        String token = login("supervisor", "Demo@2026", "SUPERVISOR");
+        mvc.perform(post("/api/wms/wave-release-check").header("Authorization", "Bearer " + token)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"waveNo\":\"WV20260727012\",\"totalPieces\":386,\"pickedPieces\":248,\"exceptionTasks\":3,\"minutesToCutoff\":24,\"dockReady\":true}"))
+            .andExpect(status().isOk()).andExpect(jsonPath("$.data.completionRate").value(64.2))
+            .andExpect(jsonPath("$.data.remainingPieces").value(138))
+            .andExpect(jsonPath("$.data.decision").value("BLOCKED"))
+            .andExpect(jsonPath("$.data.releasable").value(false));
+    }
+
     private String login(String username, String password, String role) throws Exception {
         String body = mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"username\":\"" + username + "\",\"password\":\"" + password + "\"}"))
