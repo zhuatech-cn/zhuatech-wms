@@ -44,3 +44,7 @@ Copyright © 2026 上海如静知华信息科技有限公司。
 ## 动态补货
 
 `POST /api/wms/replenishment-plan`：计算拣选面所需补货量、储备缺口、任务紧急度与目标完成时间。
+
+## 循环盘点计划
+
+`POST /api/wms/insights/cycle-count`：输入 SKU 分类、差异率、动销、盘点间隔与库存价值，返回风险分、盘点优先级和完成时限。
