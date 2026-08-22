@@ -1,4 +1,4 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <script setup>
 import { onMounted, ref } from 'vue'; import { getInbounds } from '../../api/wms'
 const list = ref([]); const statusName={RECEIVING:'收货中',ARRIVED:'已到仓',QC_HOLD:'质检待定'}; const statusClass=(v)=>v==='QC_HOLD'?'red':v==='RECEIVING'?'amber':'green'

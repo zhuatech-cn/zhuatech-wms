@@ -1,4 +1,4 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <script setup>
 import { onMounted, ref } from 'vue'; import { getTasks } from '../../api/wms'
 const list=ref([]); const names={PICKING:'拣货',PUTAWAY:'上架',COUNTING:'盘点',REPLENISHMENT:'补货',RECEIVING:'收货',PACKING:'复核打包'}; const status={WAITING:'待领取',IN_PROGRESS:'作业中',EXCEPTION:'异常',COMPLETED:'已完成'}; onMounted(async()=>list.value=await getTasks())

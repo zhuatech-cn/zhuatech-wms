@@ -1,4 +1,4 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <script setup>
 import { onMounted, ref } from 'vue'; import { getInventory } from '../../api/wms'
 const list=ref([]); onMounted(async()=>list.value=await getInventory())

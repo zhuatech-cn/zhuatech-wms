@@ -1,2 +1,2 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <template><div><section class="profile-card"><span class="avatar">陈</span><div><h2>陈师傅</h2><p>作业员 · A 组 · 工号 WH0186</p></div></section><section class="profile-list"><div><strong>当前班次</strong><span>白班 08:00–17:00</span></div><div><strong>设备状态</strong><span>蓝牙扫码器已连接</span></div><div><strong>消息与异常</strong><span>3 条未读 ›</span></div><div><strong>操作记录</strong><span>今日 326 件 ›</span></div><div><strong>作业设置</strong><span>声音、震动 ›</span></div><div><strong>退出当前账号</strong><span>›</span></div></section><p class="mobile-license">ZhuaTech WMS 开源学习版<br>上海如静知华信息科技有限公司 · 仅限个人学习交流</p></div></template>

@@ -1,4 +1,4 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <script setup>
 import { onMounted, ref } from 'vue'; import { getMyTasks } from '../../api/wms'; const tasks=ref([]); const names={PICKING:'拣货',PUTAWAY:'上架',COUNTING:'盘点',REPLENISHMENT:'补货'}; onMounted(async()=>tasks.value=(await getMyTasks()).slice(0,2))
 </script>

@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 export const dashboard = {
   stats: { todayInbound: 1168, todayOutbound: 1698, pendingTasks: 12, exceptionTasks: 3, inventoryUnits: 126840, occupancyRate: 78, inventoryAccuracy: 99.72, onTimeRate: 97.8, activeOperators: 26 },
   throughput: [

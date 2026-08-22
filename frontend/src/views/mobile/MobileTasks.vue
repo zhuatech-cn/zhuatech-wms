@@ -1,4 +1,4 @@
-<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. -->
+<!-- Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ -->
 <script setup>
 import { onMounted, ref, computed } from 'vue'; import { getMyTasks } from '../../api/wms'; const list=ref([]); const active=ref('all'); const names={PICKING:'拣货',PUTAWAY:'上架',COUNTING:'盘点',REPLENISHMENT:'补货'}; const visible=computed(()=>active.value==='all'?list.value:list.value.filter(i=>i.status===active.value)); onMounted(async()=>list.value=await getMyTasks())
 </script>
